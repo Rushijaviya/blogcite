@@ -129,9 +129,9 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# STATICFILES_DIRS = (
-#     'blogsite/templates/blog/post/static',
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 MEDIA_URL="/media/"
@@ -148,7 +148,7 @@ EMAIL_USE_TLS = True
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-STATIC_ROOT =BASE_DIR / 'blogsite/templates/blog/post/static'
+STATIC_ROOT =os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
