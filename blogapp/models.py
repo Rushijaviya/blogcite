@@ -25,7 +25,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
-    image=models.ImageField(upload_to="images/",default="")
+    image=models.ImageField(upload_to="static\images",default="")
     objects = models.Manager() # The default manager.
     published = PublishedManager() # Our custom manager.
 
